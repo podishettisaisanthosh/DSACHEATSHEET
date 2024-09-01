@@ -1,0 +1,21 @@
+str1="saisanthosh"
+str2="santhoshaisA"
+dict1={}
+dict2={}
+flag=0
+for i in range(len(str1)):
+    dict1[str1[i]]=1+dict1.get(str1[i],0)
+for j in range(len(str2)):
+    if str2[j] in dict1:
+        dict1[str2[j]]-=1
+        if dict1[str2[j]] <= 0:
+            del dict1[str2[j]]
+    else:
+        flag=1
+if dict1:
+    print("not anagram")
+elif flag==1:
+    print(" not anagram")
+else:
+    print("anagram")
+

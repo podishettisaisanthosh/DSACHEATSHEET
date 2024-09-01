@@ -1,0 +1,19 @@
+#count the words that appears n times in the same array
+arr=["sai","pavan","harish","ram","sai","harish"]
+n=2
+dict1={}
+newa=[]
+count=0
+for i in arr:
+    dict1[i]=1+dict1.get(i,0)
+print(dict1)
+for c,cnt in dict1.items():
+    if cnt==n:
+        newa.append(c)
+        count+=1
+print(len(newa))
+
+output:
+{'sai': 2, 'pavan': 1, 'harish': 2, 'ram': 1}
+['sai', 'harish']
+2

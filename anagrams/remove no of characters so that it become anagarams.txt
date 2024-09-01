@@ -1,0 +1,28 @@
+#remove no of characters so that it become anagrams
+str1="abcadeha"
+str2="adeha"
+#always we want str1 to be having so much elements than str2
+if len(str1)<len(str2):
+    str1,str2=str2,str1
+ans=0
+while len(str1)>0:
+    if str1[0] in str2:
+        counting1=str1.count(str1[0])
+        counting2=str2.count(str1[0])
+        if counting1<counting2:
+            counting1,counting2=counting2,counting1
+        diff=counting1-counting2
+        #3-2(str1-str2 a count) so we have to remove one a to balance
+        ans+=diff
+        #removing all occurance of that character for no confusion
+        str1=str1.replace(str1[0],'')
+    else:
+        #if it is not there we have to remove all the occurances to make balance
+        counting1=str1.count(str1[0])
+        ans+=counting1
+        str1=str1.replace(str1[0],'')
+print(ans)
+
+
+
+
